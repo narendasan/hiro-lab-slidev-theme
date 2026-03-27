@@ -1,0 +1,27 @@
+{
+  "name": "slidev-theme-hiro",
+  "version": "0.1.0",
+  "description": "HIRO Lab CU Boulder Slidev Theme",
+  "keywords": ["slidev-theme"],
+  "license": "NCSA",
+  "author": "Naren Dasan",
+  "main": "",
+  "files": [
+    "layouts",
+    "components",
+    "styles",
+    "assets",
+    "global-bottom.vue"
+  ],
+  "slidev": {
+    "colorSchema": "both"
+  },
+  "peerDependencies": {
+    "@slidev/client": ">=0.49.0",
+    "@slidev/types": ">=0.49.0"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^0.49.0",
+    "@slidev/types": "^0.49.0"
+  }
+}
