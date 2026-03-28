@@ -22,11 +22,17 @@
 /* ─── Page Background ────────────────────────────────── */
 html, body, #app {
   background: #f4f4f4;
-  background-color: #f4f4f4;
 }
-.dark html, .dark body, html.dark, body.dark, .dark #app {
-  background: linear-gradient(135deg, #050505 40%, #15002b 100%);
-  background-color: #000000;
+
+/* Dark mode: gradient on the slide viewport itself to avoid
+   interference from Slidev's bg-main on .slidev-slide-content */
+html.dark,
+html.dark body,
+html.dark #app {
+  background: transparent;
+}
+html.dark .slidev-slide-content {
+  background: linear-gradient(135deg, #050505 40%, #15002b 100%) !important;
 }
 
 /* ─── Slide Base ─────────────────────────────────────── */
@@ -40,7 +46,7 @@ html, body, #app {
   box-sizing: border-box;
   overflow: hidden;
 }
-.dark .slidev-layout {
+html.dark .slidev-layout {
   color: #eeeeee;
   background: transparent;
 }
@@ -372,15 +378,18 @@ html, body, #app {
 .notation-box p  { margin: 0.3em 0 0.1em; font-weight: 600; }
 .notation-box ul { margin: 0 0 0.3em 1em; padding: 0; }
 .notation-box li { margin-bottom: 0.1em; font-weight: 300; }
+html.dark .notation-box { background: rgba(255, 255, 255, 0.04); }
+html.dark .notation-box p  { color: #eeeeee; }
+html.dark .notation-box li { color: #cccccc; }
 
 /* ─── Cover Layouts ──────────────────────────────────── */
 .slidev-layout.cover,
 .slidev-layout.cover-dark {
   padding: 0;
 }
-.slidev-layout.cover {
-  display: flex;
-  flex-direction: column;
+/* Cover keeps its gradient in both light and dark mode */
+html.dark .slidev-layout.cover {
+  background: linear-gradient(135deg, #00A878 0%, #D42183 100%);
 }
 
 .slidev-layout.cover-dark h1 {
@@ -404,8 +413,8 @@ html, body, #app {
   text-align: center;
   padding: 2em;
 }
-.dark .slidev-layout.section {
-  background: #111111;
+html.dark .slidev-layout.section {
+  background: transparent;
 }
 
 .slidev-layout.section h2 {

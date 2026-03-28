@@ -28,7 +28,7 @@ useFitText(contentRef, { min: 0.5, max: 1.4 })
 </script>
 
 <template>
-  <div class="slidev-layout cover-dark" style="background: #000000;">
+  <div class="slidev-layout cover-dark" style="background: linear-gradient(135deg, #050505 40%, #15002b 100%);">
     <div class="ts-header">
       <img :src="hiroLabLogo"     class="ts-logo-lab" alt="HIRO Lab" />
       <img :src="hiroCuLogoWhite" class="ts-logo-uni" alt="CU Boulder" />

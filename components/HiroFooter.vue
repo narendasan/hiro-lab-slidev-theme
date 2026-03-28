@@ -1,12 +1,11 @@
 <script setup>
 import { computed } from 'vue'
-import { useDark } from '@vueuse/core'
-import { useSlideContext, useNav } from '@slidev/client'
+import { useSlideContext, useNav, useDarkMode } from '@slidev/client'
 
 const { $slidev } = useSlideContext()
 const tc    = $slidev?.configs?.themeConfig ?? {}
 const title = $slidev?.configs?.title ?? ''
-const isDark = useDark()
+const { isDark } = useDarkMode()
 
 const footerLogo = computed(() => isDark.value
   ? (tc.hiroFooterLogoDark ?? '/assets/hiro-square.svg')
